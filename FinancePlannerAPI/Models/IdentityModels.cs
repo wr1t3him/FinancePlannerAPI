@@ -44,16 +44,46 @@ namespace FinancePlannerAPI.Models
                 new SqlParameter("accountID", accountID)).FirstOrDefaultAsync();
         }
 
+        public async Task<Transactions> GetTransactionDetails(int transactionID)
+        {
+            return await Database.SqlQuery<Transactions>("GetTransactionDetails @transactionID",
+                new SqlParameter("transactionID", transactionID)).FirstOrDefaultAsync();
+        }
+
         public async Task<Budgets> GetBudgets(int houseID)
         {
             return await Database.SqlQuery<Budgets>("GetBudgets @houseID",
                 new SqlParameter("houseID", houseID)).FirstOrDefaultAsync();
         }
 
+        public async Task<Budgets> GetBudgetDetails(int budgetID)
+        {
+            return await Database.SqlQuery<Budgets>("GetBudgetDetails @budgetID",
+                new SqlParameter("budgetID", budgetID)).FirstOrDefaultAsync();
+        }
+
+        public async Task<BudgetItems> GetBudgetItem(int BudgetID)
+        {
+            return await Database.SqlQuery<BudgetItems>("GetBudgetItem @BudgetID",
+                new SqlParameter("BudgetID", BudgetID)).FirstOrDefaultAsync();
+        }
+
+        public async Task<BudgetItems> GetBudgetItemDetails(int budgetItemID)
+        {
+            return await Database.SqlQuery<BudgetItems>("GetBudgetItem @budgetItemID",
+                new SqlParameter("budgetItemID", budgetItemID)).FirstOrDefaultAsync();
+        }
+
         public async Task<Accounts> GetAccounts(int houseID)
         {
             return await Database.SqlQuery<Accounts>("GetAccounts @houseID",
                 new SqlParameter("houseID", houseID)).FirstOrDefaultAsync();
+        }
+
+        public async Task<Accounts> GetAccountDetails(int accountID)
+        {
+            return await Database.SqlQuery<Accounts>("GetAccountDetails @accountID",
+                new SqlParameter("accountID", accountID)).FirstOrDefaultAsync();
         }
 
         public int AddAccount(decimal total, string category, int houseID, int bank, string userID)
