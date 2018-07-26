@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
 
 namespace FinancePlannerAPI.Controllers
@@ -43,6 +44,68 @@ namespace FinancePlannerAPI.Controllers
         public int AddBudget(int houseID, string category, decimal current, decimal total)
         {
             return db.AddBudget(houseID, category, current, total);
+        }
+
+        /// <summary>
+        /// Add a new Transaction passing in a custom Created Date
+        /// </summary>
+        /// <param name="type">Transaction type</param>
+        /// <param name="name">Transaction Name</param>
+        /// <param name="description">Transaction description</param>
+        /// <param name="cost">Transaction Price</param>
+        /// <param name="Created">Time of Transaction</param>
+        /// <param name="HouseholdID">Household</param>
+        /// <param name="accountID">Account used for Transaction</param>
+        /// <returns>Integer indicating if Insert was successful</returns>
+        [Route("AddTransaction")]
+        [AcceptVerbs("GET")]
+        public int AddTransaction(string type, string name, string description, decimal cost, DateTime Created, int HouseholdID, int accountID)
+        {
+            return db.AddTransaction(type, name, description, cost, Created, HouseholdID, accountID);
+        }
+
+        /// <summary>
+        /// Full record of an Account
+        /// </summary>
+        /// <param name="houseID">HouseholdID</param>
+        /// <returns></returns>
+        [Route("GetAccounts")]
+        public async Task<Accounts> GetAccounts(int houseID)
+        {
+            return await db.GetAccounts(houseID);
+        }
+
+        /// <summary>
+        /// Get the details of a Budget Item
+        /// </summary>
+        /// <param name="BudgetID"></param>
+        /// <returns></returns>
+        [Route("GetBudgetItem")]
+        public async Task<BudgetItems> GetBudgetItem(int BudgetID)
+        {
+            return await db.GetBudgetItem(BudgetID);
+        }
+
+        /// <summary>
+        /// The full scope of a budget
+        /// </summary>
+        /// <param name="houseID"></param>
+        /// <returns></returns>
+        [Route("GetBudgets")]
+        public async Task<Budgets> GetBudgets(int houseID)
+        {
+            return await db.GetBudgets(houseID);
+        }
+        
+        /// <summary>
+        /// The full scope of a budget
+        /// </summary>
+        /// <param name="houseID"></param>
+        /// <returns></returns>
+        [Route("GetHouse")]
+        public async Task<Households> GetHouseholdData(int houseID)
+        {
+            return await db.GetHouseholdData(houseID);
         }
     }
 }
