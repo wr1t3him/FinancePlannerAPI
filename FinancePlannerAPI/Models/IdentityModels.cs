@@ -34,7 +34,7 @@ namespace FinancePlannerAPI.Models
 
         public async Task<Households> GetHouseholdData(int houseID)
         {
-            return await Database.SqlQuery<Households>("GetHousehold @houseID",
+            return await Database.SqlQuery<Households>("GetHouseholdData @houseID",
                 new SqlParameter("houseID", houseID)).FirstOrDefaultAsync();
         }
 
@@ -70,7 +70,7 @@ namespace FinancePlannerAPI.Models
 
         public async Task<BudgetItems> GetBudgetItemDetails(int budgetItemID)
         {
-            return await Database.SqlQuery<BudgetItems>("GetBudgetItem @budgetItemID",
+            return await Database.SqlQuery<BudgetItems>("GetBudgetItemDetails @budgetItemID",
                 new SqlParameter("budgetItemID", budgetItemID)).FirstOrDefaultAsync();
         }
 
@@ -107,7 +107,7 @@ namespace FinancePlannerAPI.Models
 
         public int AddTransaction(string type, string name, string description, decimal cost, DateTime Created, int HouseholdID, int accountID)
         {
-            return Database.ExecuteSqlCommand("AddTransactionWithDate @type, @name, @description, @cost, @Created, @householdID, @accountID",
+            return Database.ExecuteSqlCommand("AddTransaction @type, @name, @description, @cost, @Created, @householdID, @accountID",
 
                new SqlParameter("type", type),
                new SqlParameter("name", name),
