@@ -153,7 +153,7 @@ namespace FinancePlannerAPI.Controllers
         }
 
         /// <summary>
-        /// The detailsof a Transaction
+        /// The details of a Transaction
         /// </summary>
         /// <param name="transactionID"></param>
         /// <returns></returns>

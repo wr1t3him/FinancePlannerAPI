@@ -267,3 +267,4 @@ FinancePlannerAPI/App_Start/FilterConfig.cs
 FinancePlannerAPI/App_Start/IdentityConfig.cs
 FinancePlannerAPI/App_Start/RouteConfig.cs
 FinancePlannerAPI/App_Start/Startup.Auth.cs
+FinancePlannerAPI/App_Start/SwaggerConfig.cs
