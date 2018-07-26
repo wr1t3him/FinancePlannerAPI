@@ -301,6 +301,8 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Spectre_status.jpg" />
+    <Content Include="Template\now-ui-dashboard-master\assets\css\bootstrap.min.css" />
+    <Content Include="Template\now-ui-dashboard-master\assets\css\now-ui-dashboard.css" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
