@@ -78,7 +78,7 @@ namespace FinancePlannerAPI.Controllers
         /// <summary>
         /// A Budget Item
         /// </summary>
-        /// <param name="BudgetID"></param>
+        /// <param name="BudgetID">Budget Parameter</param>
         /// <returns></returns>
         [Route("GetBudgetItem")]
         public async Task<BudgetItems> GetBudgetItem(int BudgetID)
@@ -89,7 +89,7 @@ namespace FinancePlannerAPI.Controllers
         /// <summary>
         /// The full scope of a budget
         /// </summary>
-        /// <param name="houseID"></param>
+        /// <param name="houseID">House Parameter</param>
         /// <returns></returns>
         [Route("GetBudgets")]
         public async Task<Budgets> GetBudgets(int houseID)
@@ -100,7 +100,7 @@ namespace FinancePlannerAPI.Controllers
         /// <summary>
         /// The full scope of a household
         /// </summary>
-        /// <param name="houseID"></param>
+        /// <param name="houseID">Household Parameter</param>
         /// <returns></returns>
         [Route("GetHouse")]
         public async Task<Households> GetHouseholdData(int houseID)
@@ -111,7 +111,7 @@ namespace FinancePlannerAPI.Controllers
         /// <summary>
         /// The full scope of a Transaction
         /// </summary>
-        /// <param name="accountID"></param>
+        /// <param name="accountID">Account Parameter</param>
         /// <returns></returns>
         [Route("GetTransactions")]
         public async Task<Transactions> GetTransactions(int accountID)
@@ -133,7 +133,7 @@ namespace FinancePlannerAPI.Controllers
         /// <summary>
         /// Get the details of a Budget
         /// </summary>
-        /// <param name="BudgetID"></param>
+        /// <param name="BudgetID">Budget Parameter</param>
         /// <returns></returns>
         [Route("GetBudgetDetails")]
         public async Task<Budgets> GetBudgetDetails(int budgetID)
@@ -144,7 +144,7 @@ namespace FinancePlannerAPI.Controllers
         /// <summary>
         /// Get the details of a Budget Item
         /// </summary>
-        /// <param name="budgetItemID"></param>
+        /// <param name="budgetItemID">BudgetID</param>
         /// <returns></returns>
         [Route("GetBudgetItemDetails")]
         public async Task<BudgetItems> GetBudgetItemDetails(int budgetItemID)
@@ -155,7 +155,7 @@ namespace FinancePlannerAPI.Controllers
         /// <summary>
         /// The details of a Transaction
         /// </summary>
-        /// <param name="transactionID"></param>
+        /// <param name="transactionID">Transaction Parameter</param>
         /// <returns></returns>
         [Route("GetTransactionDetails")]
         public async Task<Transactions> GetTransactionDetails(int transactionID)

@@ -35,7 +35,7 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// A way to see the household information
         /// </summary>
-        /// <param name="houseID"></param>
+        /// <param name="houseID">HouseID</param>
         /// <returns></returns>
         public async Task<Households> GetHouseholdData(int houseID)
         {
@@ -46,7 +46,7 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// Retrieve the data of a Transaction
         /// </summary>
-        /// <param name="accountID"></param>
+        /// <param name="accountID">AccountID</param>
         /// <returns></returns>
         public async Task<Transactions> GetTransactions(int accountID)
         {
@@ -57,7 +57,7 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// See the details of a Transaction
         /// </summary>
-        /// <param name="transactionID"></param>
+        /// <param name="transactionID">TransactionID</param>
         /// <returns></returns>
         public async Task<Transactions> GetTransactionDetails(int transactionID)
         {
@@ -68,7 +68,7 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// Budget information data
         /// </summary>
-        /// <param name="houseID"></param>
+        /// <param name="houseID">HouseID</param>
         /// <returns></returns>
         public async Task<Budgets> GetBudgets(int houseID)
         {
@@ -79,7 +79,7 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// Budget Details information
         /// </summary>
-        /// <param name="budgetID"></param>
+        /// <param name="budgetID">BudgetID</param>
         /// <returns></returns>
         public async Task<Budgets> GetBudgetDetails(int budgetID)
         {
@@ -90,7 +90,7 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// The summary of a Budget Item
         /// </summary>
-        /// <param name="BudgetID"></param>
+        /// <param name="BudgetID">BudgetID</param>
         /// <returns></returns>
         public async Task<BudgetItems> GetBudgetItem(int BudgetID)
         {
@@ -101,7 +101,7 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// Budget Item Details summary
         /// </summary>
-        /// <param name="budgetItemID"></param>
+        /// <param name="budgetItemID">BudgetItemID</param>
         /// <returns></returns>
         public async Task<BudgetItems> GetBudgetItemDetails(int budgetItemID)
         {
@@ -112,7 +112,7 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// Account information summary
         /// </summary>
-        /// <param name="houseID"></param>
+        /// <param name="houseID">HouseID</param>
         /// <returns></returns>
         public async Task<Accounts> GetAccounts(int houseID)
         {
@@ -123,7 +123,7 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// Account details summary
         /// </summary>
-        /// <param name="accountID"></param>
+        /// <param name="accountID">AccountID</param>
         /// <returns></returns>
         public async Task<Accounts> GetAccountDetails(int accountID)
         {
@@ -134,11 +134,11 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// Open a new Account
         /// </summary>
-        /// <param name="total"></param>
-        /// <param name="category"></param>
-        /// <param name="houseID"></param>
-        /// <param name="bank"></param>
-        /// <param name="userID"></param>
+        /// <param name="total">Amount of Money in the Account</param>
+        /// <param name="category">Type of account</param>
+        /// <param name="houseID">HouseID</param>
+        /// <param name="bank">BankID</param>
+        /// <param name="userID">UserID</param>
         /// <returns></returns>
         public int AddAccount(decimal total, string category, int houseID, int bank, string userID)
         {
@@ -153,10 +153,10 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// Start a new budget
         /// </summary>
-        /// <param name="houseID"></param>
-        /// <param name="category"></param>
-        /// <param name="current"></param>
-        /// <param name="total"></param>
+        /// <param name="houseID">HouseID</param>
+        /// <param name="category">Type of Budget</param>
+        /// <param name="current">The Current Balance of the Budget</param>
+        /// <param name="total">Total amount of the Budget</param>
         /// <returns></returns>
         public int AddBudget(int houseID, string category, decimal current, decimal total)
         {
@@ -170,13 +170,13 @@ namespace FinancePlannerAPI.Models
         /// <summary>
         /// Add a new transaction
         /// </summary>
-        /// <param name="type"></param>
-        /// <param name="name"></param>
-        /// <param name="description"></param>
-        /// <param name="cost"></param>
-        /// <param name="Created"></param>
-        /// <param name="HouseholdID"></param>
-        /// <param name="accountID"></param>
+        /// <param name="type">Type of transaction</param>
+        /// <param name="name">Name of the transaction</param>
+        /// <param name="description">Description of the Transaction</param>
+        /// <param name="cost">Price of the Transaction</param>
+        /// <param name="Created">Date of Transaction</param>
+        /// <param name="HouseholdID">HouseID</param>
+        /// <param name="accountID">AccountID</param>
         /// <returns></returns>
         public int AddTransaction(string type, string name, string description, decimal cost, DateTime Created, int HouseholdID, int accountID)
         {
