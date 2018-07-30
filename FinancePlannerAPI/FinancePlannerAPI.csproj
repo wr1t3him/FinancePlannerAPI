@@ -312,6 +312,12 @@
     <Content Include="Spectre_status.jpg" />
     <Content Include="Template\now-ui-dashboard-master\assets\css\bootstrap.min.css" />
     <Content Include="Template\now-ui-dashboard-master\assets\css\now-ui-dashboard.css" />
+    <Content Include="Template\now-ui-dashboard-master\assets\js\core\bootstrap.min.js" />
+    <Content Include="Template\now-ui-dashboard-master\assets\js\core\jquery.min.js" />
+    <Content Include="Template\now-ui-dashboard-master\assets\js\core\popper.min.js" />
+    <Content Include="Template\now-ui-dashboard-master\assets\js\plugins\bootstrap-notify.js" />
+    <Content Include="Template\now-ui-dashboard-master\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="Template\now-ui-dashboard-master\examples\icons.html" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
