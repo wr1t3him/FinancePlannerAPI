@@ -21,7 +21,7 @@ namespace FinancePlannerAPI.Controllers
         }
 
         [Route("GetTransactions")]
-        public async Task<Transactions> GetTransactions(int accountID)
+        public async Task<List<Transactions>> GetTransactions(int accountID)
         {
             return await db.GetTransactions(accountID);
         }
@@ -33,7 +33,7 @@ namespace FinancePlannerAPI.Controllers
         }
 
         [Route("GetBudgets")]
-        public async Task<Budgets> GetBudgets(int houseID)
+        public async Task<List<Budgets>> GetBudgets(int houseID)
         {
             return await db.GetBudgets(houseID);
         }
@@ -45,7 +45,7 @@ namespace FinancePlannerAPI.Controllers
         }
 
         [Route("GetBudgetItem")]
-        public async Task<BudgetItems> GetBudgetItem(int BudgetID)
+        public async Task<List<BudgetItems>> GetBudgetItem(int BudgetID)
         {
             return await db.GetBudgetItem(BudgetID);
         }
@@ -57,7 +57,7 @@ namespace FinancePlannerAPI.Controllers
         }
 
         [Route("GetAccounts")]
-        public async Task<Accounts> GetAccounts(int houseID)
+        public async Task<List<Accounts>> GetAccounts(int houseID)
         {
             return await db.GetAccounts(houseID);
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Security.Claims;
 using System.Threading.Tasks;
@@ -48,10 +49,10 @@ namespace FinancePlannerAPI.Models
         /// </summary>
         /// <param name="accountID">AccountID</param>
         /// <returns></returns>
-        public async Task<Transactions> GetTransactions(int accountID)
+        public async Task<List<Transactions>> GetTransactions(int accountID)
         {
             return await Database.SqlQuery<Transactions>("GetTransactions @accountID",
-                new SqlParameter("accountID", accountID)).FirstOrDefaultAsync();
+                new SqlParameter("accountID", accountID)).ToListAsync();
         }
 
         /// <summary>
@@ -70,10 +71,10 @@ namespace FinancePlannerAPI.Models
         /// </summary>
         /// <param name="houseID">HouseID</param>
         /// <returns></returns>
-        public async Task<Budgets> GetBudgets(int houseID)
+        public async Task<List<Budgets>> GetBudgets(int houseID)
         {
             return await Database.SqlQuery<Budgets>("GetBudgets @houseID",
-                new SqlParameter("houseID", houseID)).FirstOrDefaultAsync();
+                new SqlParameter("houseID", houseID)).ToListAsync();
         }
 
         /// <summary>
@@ -92,10 +93,10 @@ namespace FinancePlannerAPI.Models
         /// </summary>
         /// <param name="BudgetID">BudgetID</param>
         /// <returns></returns>
-        public async Task<BudgetItems> GetBudgetItem(int BudgetID)
+        public async Task<List<BudgetItems>> GetBudgetItem(int BudgetID)
         {
             return await Database.SqlQuery<BudgetItems>("GetBudgetItem @BudgetID",
-                new SqlParameter("BudgetID", BudgetID)).FirstOrDefaultAsync();
+                new SqlParameter("BudgetID", BudgetID)).ToListAsync();
         }
 
         /// <summary>
@@ -114,10 +115,10 @@ namespace FinancePlannerAPI.Models
         /// </summary>
         /// <param name="houseID">HouseID</param>
         /// <returns></returns>
-        public async Task<Accounts> GetAccounts(int houseID)
+        public async Task<List<Accounts>> GetAccounts(int houseID)
         {
             return await Database.SqlQuery<Accounts>("GetAccounts @houseID",
-                new SqlParameter("houseID", houseID)).FirstOrDefaultAsync();
+                new SqlParameter("houseID", houseID)).ToListAsync();
         }
 
         /// <summary>
